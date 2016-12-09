@@ -1,0 +1,32 @@
+a desgin of tic-tac-toe player
+
+task T: play tic-tac-toe
+performance P: false persentage against a human with random priority
+experience E: play against itself
+Target function V: board -> score
+-about V:
+-b is a board
+-def next(b) = max({move(b) for all move}, key = V)
+-if b.check() = win: V(b)=100
+-if b.check() = false: V(b)=-100
+-if b.check() = drawn: V(b)=0
+-if b.check() = None: V(b) = V(b') b'=next(b)
+
+the function module aV to approximate V:
+x1 = our 3-line
+x2 = oppsite's 3-line
+x3 = our 2-line with an empty
+x4 = oppsites's 2-line with an empty
+aV(x) = a1*x1+a2*x2+a3*x3+a4*x4
+
+representation of experience:
+data of <x, Vt(x)>, vector x is a representation of board state
+for x is final state V is clear, that is:
+for x1 = 1 or x2 =1 ,Vt = 100 or -100
+for x = 0, V = 0
+
+how to generate experience form a game:
+Given a vector a, we have a Va, in this way, a game Ga is defined(two player play the game by aV). then for the middle stage x of Ga, we put Vt(x) = aV(next(next(x))) (if next(next(x) is final stage, then it is 100 or -100)), in this way we generate the training data from the game log. <- Critc
+
+how to generalize aV from training data:
+by linear regression. <- Generlizer

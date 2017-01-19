@@ -42,7 +42,7 @@ def training(init_a, generalizer, times = 3, silence = True):
 
 def main():
     init_a = np.array([0,0,0,0,0,0,0])
-    a, winner_list = training(init_a, generalizer1, times = 20, silence = True)
+    a, winner_list = training(init_a, generalizer1, times = 20, silence = False)
     print("final hypo:", a)
     plotTrainingProcess(winner_list, 1)
 

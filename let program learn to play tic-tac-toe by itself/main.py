@@ -44,7 +44,7 @@ def main():
     init_a = np.array([0,0,0,0,0,0,0])
     a, winner_list = training(init_a, generalizer1, times = 20, silence = False)
     print("final hypo:", a)
-    plotTrainingProcess(winner_list, 1)
+    plotTrainingProcess(winner_list, 4)
 
 if __name__ == '__main__':
     main()

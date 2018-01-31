@@ -11,7 +11,7 @@ def perform(experiment, silence = True):
     h = lambda x: np.dot(x,a[1:])+a[0]
     b = experiment.device
     player1 = AI(experiment.hypo)
-    player2 = AI(experiment.hypo)#h)
+    player2 = AI(experiment.hypo)
     player = [player1, player2]
     #random.shuffle(player)
     b.play(player[0], player[1], silence)

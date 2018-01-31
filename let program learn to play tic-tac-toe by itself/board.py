@@ -97,7 +97,7 @@ class board(object):
                 break
             self.run(decision)
             if not silence:
-                os.system('cls')
+                os.system('clear')
                 print(self)
                 time.sleep(0.1)
         if not silence:

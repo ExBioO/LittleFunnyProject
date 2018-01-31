@@ -17,7 +17,7 @@ def plotTrainingProcess(winner_list, gap):
     plt.title('Training Process')
     plt.show()
 
-def training(init_a, generalizer, times = 3, silence = True):
+def training(init_a, generalizer, times = 10, silence = True):
     a = init_a
     winner_list = []
     for i in range(times):
@@ -42,9 +42,9 @@ def training(init_a, generalizer, times = 3, silence = True):
 
 def main():
     init_a = np.array([0,0,0,0,0,0,0])
-    a, winner_list = training(init_a, generalizer1, times = 20, silence = True)
+    a, winner_list = training(init_a, generalizer1, times = 10, silence = False)
     print("final hypo:", a)
-    plotTrainingProcess(winner_list, 1)
+    plotTrainingProcess(winner_list, 4)
 
 if __name__ == '__main__':
     main()
